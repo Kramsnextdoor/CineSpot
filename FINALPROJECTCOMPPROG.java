@@ -543,5 +543,61 @@ public class FINALPROJECTCOMPPROG {
         for (Booking b : bookings) if (b.id.equalsIgnoreCase(id)) return b;
         return null;
     }
-}
+
     
+// Input Validation: This checks if the user enters a positive valid whole number.
+
+private static int readPositiveInt(String message) {
+
+    while (true) {
+
+        System.out.print(message);
+        String input = scanner.nextLine();
+
+        try {
+
+            int number = Integer.parseInt(input);
+
+            if (number > 0) {
+                return number;
+            } else {
+                System.out.println("[ERROR] Please enter a number greater than 0.");
+            }
+
+        } catch (NumberFormatException e) {
+
+            System.out.println("[ERROR] input invalid! Please enter numbers only.");
+
+        }
+    }
+}
+
+
+// This one checks if the user enters a valid positive decimal number.
+
+private static double readPositiveDouble(String message) {
+
+    while (true) {
+
+        System.out.print(message);
+        String input = scanner.nextLine();
+
+        try {
+
+            double number = Double.parseDouble(input);
+
+            if (Double.isFinite(number) && number > 0) {
+                return number;
+            } else {
+                System.out.println("[ERROR] Please enter a valid amount greater than 0.");
+            }
+
+        } catch (NumberFormatException e) {
+
+            System.out.println("[ERROR] input invalid! Please enter a valid number.");
+
+        }
+    }
+}
+
+}
